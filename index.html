@@ -294,7 +294,14 @@
 		jQuery(".masthead").css({cssText:'display:none!important'});
 		jQuery("#content-list").show();
 	} else if(mysnapshot.Event == "content"){
-		var msg = `<li>
+		var count = jQuery("#content-list .timeline").length;
+		if(count % 2 == 0){
+			var align = "timeline-inverted";
+		} else {
+			var align = "";
+		}
+	
+		var msg = `<li class="`+align+`">
 		  <div class="timeline-badge success">
 			<i class="fa fa-check"></i>
 		  </div>
