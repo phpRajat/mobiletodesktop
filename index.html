@@ -93,7 +93,7 @@
   
   <script type="text/javascript">
   var userInstance = Cookies.get('userInstance');
-  if(userInstance == ""){
+  if(userInstance == undefined){
 		var userInstance = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 10);
 		Cookies.set('userInstance', userInstance);
   }
