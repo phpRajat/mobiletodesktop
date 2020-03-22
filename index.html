@@ -296,9 +296,9 @@
 	} else if(mysnapshot.Event == "content"){
 		var count = jQuery("#content-list .timeline li").length;
 		if(count % 2 == 0){
-			var align = "timeline-inverted";
-		} else {
 			var align = "";
+		} else {
+			var align = "timeline-inverted";
 		}
 	
 		var msg = `<li class="`+align+`">
