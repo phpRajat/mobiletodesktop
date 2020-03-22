@@ -202,7 +202,7 @@
 		  </div>
 		  <div class="timeline-panel">
 			<div class="timeline-heading">
-			  <h5 class="timeline-title">Connection C</h5>
+			  <h5 class="timeline-title">Connection established</h5>
 			  <p>
 				<small class="text-muted">
 				  <i class="fa fa-clock-o"></i>
@@ -294,7 +294,7 @@
 		jQuery(".masthead").css({cssText:'display:none!important'});
 		jQuery("#content-list").show();
 	} else if(mysnapshot.Event == "content"){
-		var count = jQuery("#content-list .timeline").length;
+		var count = jQuery("#content-list .timeline li").length;
 		if(count % 2 == 0){
 			var align = "timeline-inverted";
 		} else {
