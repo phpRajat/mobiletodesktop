@@ -91,7 +91,7 @@
   firebase.initializeApp(firebaseConfig);
   var userInstance = window.location.hash.replace('#', '');
   var milliseconds = new Date().getTime();
-	firebase.database().ref('mobiletodesktop-168c7/' + userInstance).push({
+	firebase.database().ref('userInstance/' + userInstance).push({
 	  Time: milliseconds,
 	  Event: "reload",
 	  Message: ""
