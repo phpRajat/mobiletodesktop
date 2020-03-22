@@ -289,7 +289,6 @@
   var notify = firebase.database().ref('userInstance/'+userInstance);
   notify.on("child_added", function(snapshot, prevChildKey) {
 	var mysnapshot = snapshot.val();
-	console.log(mysnapshot);
 	if(mysnapshot.Event == "reload"){
 		jQuery(".masthead").css({cssText:'display:none!important'});
 		jQuery("#content-list").show();
@@ -307,7 +306,7 @@
 		  </div>
 		  <div class="timeline-panel">
 			<div class="timeline-heading">
-			  <h5 class="timeline-title">Connection C</h5>
+			  <h5 class="timeline-title">Received</h5>
 			  <p>
 				<small class="text-muted">
 				  <i class="fa fa-clock-o"></i>
