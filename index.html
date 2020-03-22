@@ -187,6 +187,13 @@
   </header>
 
 	<div class="container" id="content-list" style="display:none">
+	<div class="page-header">
+		<h3 id="timeline" class="text-primary">The Plumbing Company [**-****6541]</h3>
+		<small>
+		  1200 Ridgecrest Blvd.<br/>
+		  Fayetteville, AR 72704
+		</small>
+	  </div>
 	  <ul class="timeline">
 		<li>
 		  <div class="timeline-badge primary">
@@ -348,7 +355,7 @@
 	var mysnapshot = snapshot.val();
 	console.log(mysnapshot);
 	if(mysnapshot.Event == "reload"){
-		jQuery(".masthead").hide();
+		jQuery(".masthead").css({cssText:'display:none!important'});
 		jQuery("#content-list").show();
 	}
   });
