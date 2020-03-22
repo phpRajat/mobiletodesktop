@@ -37,7 +37,9 @@
 					<li class="_1Bdrh">Point your phone to this screen to capture the code</li>
 				</ol>
 			</div>
-			<div class="col-sm-6"></div>
+			<div class="col-sm-6">
+				<div id="qrcode"></div>
+			</div>
 		</div>
     </div>
     <div class="overlay"></div>
@@ -81,7 +83,11 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/stylish-portfolio.min.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+  <script type="text/javascript">
+  new QRCode(document.getElementById("qrcode"), "http://jindo.dev.naver.com/collie");
+  </script>
 </body>
 
 </html>
