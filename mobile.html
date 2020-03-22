@@ -1,1 +1,111 @@
-<h1>hello</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Mobile content to desktop</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+  <style>
+	li._1Bdrh {font-size: 18px;line-height: 45px;color: #f2f2f2;  text-align: left;}
+	#page-top .masthead{ padding-top: 3rem; }
+  </style>
+</head>
+
+<body id="page-top">
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <ul class="list-inline mb-5">
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white mr-3" href="#">
+            <i class="icon-social-facebook"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white mr-3" href="#">
+            <i class="icon-social-twitter"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white" href="#">
+            <i class="icon-social-github"></i>
+          </a>
+        </li>
+      </ul>
+      <p class="text-muted small mb-0">Copyright &copy; Your Website 2019</p>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/stylish-portfolio.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-functions.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
+
+  <script type="text/javascript">
+  var firebaseConfig = {
+    apiKey: "AIzaSyBCl4nU09Z6iszaQsv5TiCs5wPCsvfnr3o",
+    authDomain: "mobiletodesktop-168c7.firebaseapp.com",
+    databaseURL: "https://mobiletodesktop-168c7.firebaseio.com",
+    projectId: "mobiletodesktop-168c7",
+    storageBucket: "mobiletodesktop-168c7.appspot.com",
+    messagingSenderId: "990922597310",
+    appId: "1:990922597310:web:d47bd7526085e913e64fef",
+    measurementId: "G-E3JV8225ZK"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  var userInstance = window.location.hash.replace('#', '');
+  var milliseconds = new Date().getTime();
+	firebase.database().ref('mobiletodesktop-168c7/' + userInstance).push({
+	  Time: milliseconds,
+	  Event: "reload",
+	  Message: ""
+	}, function (error) {
+	  if (error) {
+		alert("something wrong! please try after sometime");
+		console.log(error);
+	  }
+	  else {
+
+	  }
+	});
+  
+  </script>
+</body>
+
+</html>
