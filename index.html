@@ -118,7 +118,8 @@
 		Cookies.set('userInstance', userInstance);
   }
   console.log(userInstance);
-  new QRCode(document.getElementById("qrcode"), userInstance);
+  var url = "https://phprajat.github.io/mobiletodesktop/mobile.html#"+userInstance;
+  new QRCode(document.getElementById("qrcode"), url);
   var notify = firebase.database().ref('mobiletodesktop-168c7/'+userInstance);
   notify.on("child_added", function(snapshot, prevChildKey) {
 	var mysnapshot = snapshot.val();
