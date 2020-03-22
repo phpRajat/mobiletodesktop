@@ -41,7 +41,7 @@
 					<input type="checkbox" class="form-check-input" id="exampleCheck1">
 					<label class="form-check-label" for="exampleCheck1">Send Image</label>
 				  </div>
-				  <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i>Send</button>
+				  <button type="submit" class="btn btn-primary" onclick="SendMessage()"><i class="fa fa-paper-plane"></i> Send</button>
 				</form>
 
 			</div>
@@ -102,6 +102,38 @@
 
 	  }
 	});
+  
+      function SendMessage() {
+        var milliseconds = new Date().getTime();
+        var messageText = $("#content").val();
+        if ( $.trim( messageText ) == '' ){
+          jQuery("#content").val(" ").focus().css("box-shadow", "0px 0px 4px 1px #009688");
+          return false;
+        }
+        firebase.database().ref('userInstance/' + userInstance).push({
+          Time: milliseconds,
+          Event: "content",
+          Message: messageText
+        }, function (error) {
+          if (error) {
+            alert("something wrong! please try after sometime");
+            console.log(error);
+          }
+          else {
+            $("#content").val("");
+			/*
+            jQuery.ajax({
+              url:"",
+              type:"post",
+              data:{ "msg":messageText, "_token":"vglsZBoJEQ6NNX5DZMA6kji9lLOmtc15w2pzKTE8" },
+              success: function(result){
+                console.log(result);
+              }
+            });*/
+          }
+        });
+        return false;
+      }
   
   </script>
 </body>
