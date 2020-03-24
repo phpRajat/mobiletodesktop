@@ -189,10 +189,7 @@
 	<p>&nbsp;</p>
 	<div class="page-header">
 		<h3 id="timeline" class="text-primary">Connected <i class="fa fa-check"></i></h3>
-		<small>
-		  1200 Ridgecrest Blvd.<br/>
-		  Fayetteville, AR 72704
-		</small>
+		<div id="mini-code"></div>
 	  </div>
 	  <ul class="timeline">
 		<li>
@@ -285,6 +282,7 @@
   console.log(userInstance);
   var url = "https://phprajat.github.io/mobiletodesktop/mobile.html#"+userInstance;
   new QRCode(document.getElementById("qrcode"), url);
+  new QRCode(document.getElementById("mini-code"), url);
   var notify = firebase.database().ref('userInstance/'+userInstance);
   notify.on("child_added", function(snapshot, prevChildKey) {
 	var mysnapshot = snapshot.val();
