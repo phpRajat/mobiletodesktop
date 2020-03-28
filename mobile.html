@@ -47,17 +47,14 @@
 		  <div class="message parker">
 			Uh, what is this guy's problem, Mr. Stark? 🤔
 		  </div>
-		  <div class="message stark">
-			Uh, he's from space, he came here to steal a necklace from a wizard.
-		  </div>
-		  <div class="message stark">
+		  <div class="message stark" style="display:hidden">
 			<div class="typing typing-1"></div>
 			<div class="typing typing-2"></div>
 			<div class="typing typing-3"></div>
 		  </div>
 		</div>
 		<div class="input">
-		  <i class="fas fa-camera"></i><i class="far fa-laugh-beam"></i><input placeholder="Type your message here!" type="text" /><i class="fas fa-microphone"></i>
+		  <i class="fas fa-camera"></i><i class="far fa-laugh-beam"></i><input id="content" placeholder="Type your message here!" type="text" /><i class="fas fa-paper-plane" onclick="SendMessage()"></i>
 		</div>
 	  </div>
 	</div>
@@ -109,6 +106,7 @@
           jQuery("#content").val(" ").focus().css("box-shadow", "0px 0px 4px 1px #009688");
           return false;
         }
+		jQuery("#chat").append('<div class="message stark">'+messageText+'</div>');
         firebase.database().ref('userInstance/' + userInstance).push({
           Time: milliseconds,
           Event: "content",
