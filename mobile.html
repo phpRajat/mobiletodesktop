@@ -35,19 +35,7 @@
 		  <div class="time">
 			Today at 11:41
 		  </div>
-		  <div class="message parker">
-			Hey, man! What's up, Mr Stark? 👋
-		  </div>
-		  <div class="message stark">
-			Kid, where'd you come from? 
-		  </div>
-		  <div class="message parker">
-			Field trip! 🤣
-		  </div>
-		  <div class="message parker">
-			Uh, what is this guy's problem, Mr. Stark? 🤔
-		  </div>
-		  <div class="message stark" style="display:hidden">
+		  <div class="message stark" style="display:none">
 			<div class="typing typing-1"></div>
 			<div class="typing typing-2"></div>
 			<div class="typing typing-3"></div>
@@ -106,7 +94,7 @@
           jQuery("#content").val(" ").focus().css("box-shadow", "0px 0px 4px 1px #009688");
           return false;
         }
-		jQuery("#chat").append('<div class="message stark">'+messageText+'</div>');
+		jQuery("#chat").append('<div class="message parker">'+messageText+'</div>');
         firebase.database().ref('userInstance/' + userInstance).push({
           Time: milliseconds,
           Event: "content",
