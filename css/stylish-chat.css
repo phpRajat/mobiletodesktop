@@ -10,11 +10,12 @@ body, html {
 
 .center {
   position: absolute;
-/*   top: 50%;
+  /*   top: 50%;
   left: calc(50% + 12rem);
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
- */}
+ */
+  }
 
 .pic {
   width: 4rem;
@@ -113,7 +114,7 @@ body, html {
   flex-direction: column;
   -webkit-box-pack: justify;
   justify-content: space-between;
-  width: 60rem;
+  width: 100%;
   height: 100%;
   z-index: 2;
   box-sizing: border-box;
@@ -271,6 +272,6 @@ body, html {
 
 @media only screen and (max-width: 768px) {
   .chat .messages{
-	  height: 95rem;
-  }
+	  /* height: 95rem; */
+	 }
 }
