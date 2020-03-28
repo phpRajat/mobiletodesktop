@@ -10,60 +10,59 @@
 
   <title>Mobile content to desktop</title>
 
-  <!-- Bootstrap Core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
   <!-- Custom Fonts -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
   <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 
   <!-- Custom CSS -->
-  <link href="css/stylish-portfolio.min.css" rel="stylesheet">
-  <style>
-	li._1Bdrh {font-size: 18px;line-height: 45px;color: #f2f2f2;  text-align: left;}
-	#page-top .masthead{ padding-top: 3rem; }
-  </style>
+  <link href="css/stylish-chat.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
-	<p>&nbsp;</p>
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-6">
-				<form>
-				  <div class="form-group">
-					<label for="content">Text</label>
-					<textarea class="form-control" id="content"></textarea>
-					<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-				  </div>
-				  <div class="form-group form-check">
-					<input type="checkbox" class="form-check-input" id="exampleCheck1">
-					<label class="form-check-label" for="exampleCheck1">Send Image</label>
-				  </div>
-				  <button type="submit" class="btn btn-primary" onclick="SendMessage()"><i class="fa fa-paper-plane"></i> Send</button>
-				</form>
-
-			</div>
-			<div class="col-sm-6"></div>
+	<div class="center">
+	  <div class="chat">
+		<div class="contact bar">
+		  <div class="pic stark"></div>
+		  <div class="name">
+			Tony Stark
+		  </div>
+		  <div class="seen">
+			Today at 12:56
+		  </div>
 		</div>
+		<div class="messages" id="chat">
+		  <div class="time">
+			Today at 11:41
+		  </div>
+		  <div class="message parker">
+			Hey, man! What's up, Mr Stark? 👋
+		  </div>
+		  <div class="message stark">
+			Kid, where'd you come from? 
+		  </div>
+		  <div class="message parker">
+			Field trip! 🤣
+		  </div>
+		  <div class="message parker">
+			Uh, what is this guy's problem, Mr. Stark? 🤔
+		  </div>
+		  <div class="message stark">
+			Uh, he's from space, he came here to steal a necklace from a wizard.
+		  </div>
+		  <div class="message stark">
+			<div class="typing typing-1"></div>
+			<div class="typing typing-2"></div>
+			<div class="typing typing-3"></div>
+		  </div>
+		</div>
+		<div class="input">
+		  <i class="fas fa-camera"></i><i class="far fa-laugh-beam"></i><input placeholder="Type your message here!" type="text" /><i class="fas fa-microphone"></i>
+		</div>
+	  </div>
 	</div>
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="js/stylish-portfolio.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   
     <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
     <!-- Add Firebase products that you want to use -->
@@ -134,7 +133,9 @@
         });
         return false;
       }
-  
+  var chat = document.getElementById('chat');
+   chat.scrollTop = chat.scrollHeight - chat.clientHeight;
+
   </script>
 </body>
 
